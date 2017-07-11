@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>支持门店</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+.citycard { background: #fff; width: 100%; padding: 15px; box-sizing: border-box; position: relative; margin-bottom: 10px; }
+.title { position: relative; }
+.left { position: absolute; left: 0; right: 80px; font-size: 15px; color: #000; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.right { position: absolute; right: 0; width: 80px; text-align: right; font-size: 14px; color: #888; }
+.subtit { margin-top: 26px; font-size: 13px; color: #888; line-height: 17px; }
+    </style>
+</head>
+
+<body>
+    <div class="citycard">
+        <div class="title">
+            <div class="left">星巴克上海时代广场店星巴克上海时代广场店</div>
+            <div class="right">143m</div>
+        </div>
+        <div class="subtit">上海市浦东新区张杨路500号华润时代广场1楼上海市浦东新区张杨路500号华润时代广场1楼</div>
+    </div>
+    <div class="citycard">
+        <div class="title">
+            <div class="left">星巴克上海时代广场店星巴克上海时代广场店</div>
+            <div class="right">143m</div>
+        </div>
+        <div class="subtit">上海市浦东新区张杨路500号华润时代广场1楼上海市浦东新区张杨路500号华润时代广场1楼</div>
+    </div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7GmmLicmMm1HETS5Zqx6qHUKItAUtOzE"></script>
+    <script type="text/javascript">
+        function myFun(result){
+            var cityName = result.name;
+            alert(JSON.stringify(result));
+        }
+        var myCity = new BMap.LocalCity();
+        myCity.get(myFun)
+
+    </script>
+</body>
+
+</html>

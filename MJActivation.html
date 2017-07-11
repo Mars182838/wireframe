@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>激活账户</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <link href="css/MJActivation.css" rel="stylesheet" >
+</head>
+<body>
+    <div class="contianer">
+        <div class="contianer-box none-activated">
+            <div class="header-image"><img src="images/activate_header.jpg"></div>
+            <div class="company">
+                <div class="tlt">企业名称</div>
+                <div class="name">上海宝钢股份有限公司</div>
+            </div>
+            <div class="info-input">
+                <div class="input-list">
+                    <div class="phone">手机号</div>
+                    <input id="phoneVal" type="text" placeholder="请输入您在企业的手机号">
+                </div>
+                <div class="input-list">
+                    <div class="phone">验证码</div>
+                    <input id="vertify" type="text" placeholder="请输入验证码">
+                    <span class="btn">发送校验码</span>
+                </div>
+            </div>
+            <div class="viewBtn">完成激活</div>
+        </div>
+    </div>
+
+    <div class="float">
+        <div class="fail-box">
+            <div class="content-box">
+                <img src="images/header-icon.png">
+                <div class="tlt">您不是改企业员工</div>
+                <div class="detail">如有问题请联系企业HR</div>
+                <div class="viewBtn">我知道了</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

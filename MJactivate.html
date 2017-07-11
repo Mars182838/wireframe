@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>激活账户</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <link href="css/MJactivate.css" rel="stylesheet" >
+    <script>
+        $(document).ready(function(){
+            var containData = [{name:"真实姓名",val:"王小雷"},{name:"身份证号",val:"3**********0"},{name:"福利企业",val:"易百信息技术(上海)股份有限公司"}];
+            initContain(containData);
+
+            $(".float-box").click(function() {
+                $("float").hide();
+                location.href = "index.html";
+            });
+
+            $(".btn").click(function() {
+                $(".float").show();
+                console.log("sss");
+            });
+        });
+
+        document.addEventListener('AlipayJSBridgeReady', function() {
+            AlipayJSBridge.call('setOptionMenu', {
+                reset: true
+            });
+        }, false);
+
+        function initContain(data){
+            var containbox = '<div class="contain-box"><div class="activate_header"><img src="images/activate_header.jpg"></div><div class="activate-box"></div><div class="btn">完成激活</div></div>'
+            $(".contain").append($(containbox));
+
+            $.each(data,function(index, el) {
+                var dom = '';
+                dom = '<div class="activate-list"><div class="name">'+el.name+'</div><div class="val">'+el.val+'</div></div>'
+                $(".activate-box").append(dom);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="contain">
+    </div>
+    <div class="float">
+        <div class="float-box">激活成功</div>
+        <!--<div class="fail-box">-->
+            <!--<div class="content-box">-->
+                <!--<img src="images/header-icon.png">-->
+                <!--<div class="tlt">您不是改企业员工</div>-->
+                <!--<div class="detail">如有问题请联系企业HR</div>-->
+                <!--<div class="viewBtn">我知道了</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</body>
+</html>

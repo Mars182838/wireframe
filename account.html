@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的账户</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <link href="css/account.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet" >
+    <link href="css/style.css" rel="stylesheet" >
+    <script src="js/common.js"></script>
+<script>
+    $(document).ready(function() {
+        initFooter("我的账户");
+    });
+</script>
+</head>
+<body>
+    <div class="contain">
+        <div class="contain-box">
+            <div class="contain-list">
+                <div class="list first">
+                    <div class="left-icon details"></div>
+                    <div class="icon-form-arrow"></div>
+                    <div class="detail">30,000.00</div>
+                    <div class="tel">福利明细</div>
+                </div>
+                <div class="list">
+                    <div class="left-icon exchange"></div>
+                    <div class="icon-form-arrow"></div>
+                    <div class="detail">3</div>
+                    <div class="tel">我的兑换券</div>
+                </div>
+            </div>
+
+            <div class="detail-box">
+                <div class="detail-list">
+                    <div class="left-icon information"></div>
+                    <div class="icon-form-arrow"></div>
+                    <div class="tel">个人信息</div>
+                </div>
+            </div>
+            <div class="detail-box">
+                <div class="detail-list">
+                    <div class="left-icon company"></div>
+                    <div class="icon-form-arrow"></div>
+                    <div class="tel">添加福利企业</div>
+                </div>
+            </div>
+            <div class="detail-box">
+                <div class="detail-list">
+                    <div class="left-icon card"></div>
+                    <div class="icon-form-arrow"></div>
+                    <div class="tel">激活礼品卡</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer row" id="footer"></div>
+</body>
+</html>

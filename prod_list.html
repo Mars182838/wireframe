@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>福利商城</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/citydata.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css?11">
+    <link rel="stylesheet" href="css/prod_list.css">
+    <script>
+    var i = 0;
+    $(document).ready(function() {
+        initFooter("福利商城");
+        for(var i=0; i<10; i++){
+            initProdlist();
+        }
+
+        initProdlist();
+        document.addEventListener('AlipayJSBridgeReady', function() {}, false);
+        $("#city").click(selectCity);
+        $("#brand").click(showBrandlist);
+        $("#select").click(function() {
+            i = i+1;
+            if(i% 2 == 0){
+                $(".select").removeClass('tohight').addClass("tolow");
+            }else{
+                $(".select").removeClass('tolow').addClass("tohight");
+            }
+        });
+    });
+
+    function selectCity() {
+        //自定义城市必须如下格式:[{name:"杭州",adcode:"xxxx",pinyin:"hangzhou"},{name:"杭州",adcode:"xxxx",pinyin:"hangzhou"}]
+        AlipayJSBridge.call('getCities', {
+            currentCity: '上海',
+            needHotCity: true,
+            customCities: citylist
+        }, function(result) {
+            $("#city").html("<span id='cityname'>" + result.city + "<span>&nbsp;<i class='icon-drop-down'></i>");
+        });
+    }
+
+    function showBrandlist() {
+    	if($("body").find(".brandbox").length>0){
+    		$(".brandbox").remove();
+    	}else{
+    		initBrandlist();
+    		$(".brandbox").css("opacity","1");
+    	}
+
+    }
+
+    function initBrandlist() {
+        var dom = $('<div class="brandbox trans05"><ul><li data-tit="全部品牌"><div class="logobrand ptall"></div><div class="tit">全部品牌</div></li><li data-tit="哈根达斯"><div class="logobrand ptall"></div><div class="tit">哈根达斯</div></li><li data-tit="DQ"><div class="logobrand ptall"></div><div class="tit">DQ</div></li></ul></div>');
+        $("body").append(dom);
+        $(".brandbox").not("ul").click(function(){
+        	$(".brandbox").remove();
+        })
+        $(".brandbox li").click(function(){
+            if($(this).data("tit") == "全部品牌"){
+                $("#brand").data("brand","");
+                $("#brand .icon").removeClass("actived");
+            }else{
+                  $("#brand").data("brand",$(this).data("tit"));
+                 $("#brand .icon").addClass('actived')
+            }
+        })
+    }
+    function initProdlist(){
+        var data = {imgUrl:"images/img.png",title:"新品手工调制(任意口味)新品手工",price:"3,200.00",link:"prod_detail.html"};
+        var item = '<a class="prod-item" href="'+data.link+'"><div class="img"><img src="'+data.imgUrl+'"></div><div class="itemcontent"><div class="tagBox"><div class="tag"><img src="images/hottag.png"></div></div><div class="pro-tit">'+data.title+'</div><div class="pro-price">'+data.price+'<i>福利金</i></div></div></a>';
+        $(".prod-list").append(item);
+    }
+    </script>
+</head>
+
+<body>
+    <div class="headtips">
+        <i class="icon icon-chip"></i>
+        <div class="tips">福利金余额
+            <font color="#fd6c58">1000.00</font>
+        </div>
+    </div>
+    <div class="topbar row" style="top: 45px;">
+        <div class="topbaritem columns three" id="city">
+            <span id="cityname">上海<span>
+            <i class="icon icon-drop-down"></i>
+        </div>
+        <div class="topbaritem columns three" id="select">
+            价格
+            <div class="select"></div>
+        </div>
+        <div class="topbaritem columns three" id="brand" data-brand="">
+            <span>
+            品牌
+            <i class="icon icon-screen"></i>
+            </span>
+        </div>
+    </div>
+    <div class="prod-list">
+    </div>
+   <div class="footer row" id="footer">
+    </div>
+</body>
+
+</html>

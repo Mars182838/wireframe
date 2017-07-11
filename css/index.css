@@ -1,0 +1,141 @@
+*{padding: 0; margin: 0;}
+body { width: 100%; font-family: 'PingFangSC-Regular'; line-height: 1; background: #f5f5f9; }
+
+.pagecontent {position: absolute; width: 100%; margin-bottom:  60px;}
+.header {margin-bottom: 8px; background: #fff; text-align: center;}
+.header-box { text-align: center;}
+.header-box img {width: 100%;}
+.name {font-size: 15px; color: #fff; padding-top: 15px;}
+.content { margin-top: -125px;}
+.protrait {width: 100%; height: 60px;}
+.protrait img {width: 60px; height: 100%; border-radius: 50%;  border: 2px solid #fff; }
+.company-box {margin-top: 5px; width: 100%;position: absolute; color: #fff; font-size: 13px; line-height: 15px; height: 15px;}
+.company-icon img {width: 13px; height: 13px;}
+
+.header-card {position: relative; background: #fff; margin-top: 40px; height: 60px;}
+.card-list {width: 50%; height: 50px;}
+.card-list.left {float: left; }
+.card-list.right {margin-left: 50%;
+    border-left: 1px solid #ddd;  }
+.card_icon {float: left; width: 45px; height: 45px; background: url("../images/card_icon.png"); background-size: 100%; padding-top: 5px; margin-left: 15px; margin-right: 10px;}
+.card_icon.left{background-position: 0 0; }
+.card_icon.right{background-position: 0 100%;}
+.card_name {color: #a4a9b0; font-size: 13px; text-align: left; padding-top: 10px;}
+.value {font-size: 15px; color: #3f3f3f; text-align: left; padding-top: 5px;}
+
+.column.first {position: relative; width: 100%; background-color: #fff; margin: 10px 0;}
+.column-box {width: 100%; height: 100%; }
+.left-header {width: 100%; height: 50px; padding-top: 12px; }
+.header-icon {width: 36px; height: 36px; float: left; padding-left: 15px; padding-right: 6px; }
+.header-icon img {width: 100%; height: 100%; }
+.left-header .tel {color: #3f3f3f; font-size: 14px;overflow: hidden; height: 18px; white-space: nowrap; text-overflow: ellipsis; }
+.left-header .val {font-size: 12px; color: #888; }
+.column-num {width: 100%; text-align: center; padding-top: 12px; color: #515151; font-size: 18px; }
+.colmun-company {width: 100%; text-align: center; padding-top: 25px; color: #ccc; font-size: 13px; padding-bottom: 15px; overflow: hidden; }
+
+.card { position: relative; display: block; box-sizing: border-box; width: 100%; margin-bottom: 8px; padding: 0 12px; background: #fff; }
+.card-icon { position: relative; top: 12px; width: 36px; height: 36px; border-radius: 3px; background: url(../images/icon-card.png); background-size: 100%; }
+
+/*card icon*/
+.card-account .card-icon { background-position: 0 0; }
+.card-welfare .card-icon { background-position: 0 -100%; }
+.card-deadline .card-icon { background-position: 0 -200%; }
+.card-prod .card-icon { background-position: 0 -300%; }
+.card-title { font-size: 14px; line-height: 20px; position: absolute; top: 12px; right: 12px; left: 56px; overflow: hidden; height: 20px; white-space: nowrap; text-overflow: ellipsis; color: #3f3f3f; }
+.card-time { font-size: 12px; position: absolute; top: 32px; right: 12px; left: 56px; color: #888; }
+.card-line { width: 100%;height:1px; border-top: 1px solid #ddd; margin-top: 20px;}
+.card-link { font-size: 14px; line-height: 40px; display: block; height: 40px; text-align: center; color: #108ee9; }
+.card-link.one { width: 100%; }
+.card-link.two { float: left; width: 50%; }
+
+/*card-welfare*/
+.card-welfare .img { box-sizing: border-box; width: 100%; margin-top: 25px; }
+.card-welfare .img img { width: 100%; height: 100%; }
+.card-welfare .text { font-size: 14px; line-height: 20px; width: 100%; margin: 10px 0; color: #3f3f3f; }
+
+/*card-deadline*/
+.card-deadline .img { width: 80px; height: 80px; border: 1px solid #ddd; margin-top: 20px;}
+.card-deadline .img img { width: 100%; height: 100%; }
+.deadline-content { position: absolute; top:56px; right: 20px; height: 72px; left: 93px; background: #ddd; padding-left: 10px; padding-top: 10px;}
+.deadline-content .prod-title { font-size: 15px; line-height: 21px; color: #3f3f3f; position: absolute;}
+.deadline-content .prod-deadline {font-size: 12px; line-height: 17px; height: 17px; color: #a4a9b0; margin-top: 25px;}
+.card-right {float: right; height: 80px;}
+/*.card-right .right-line {height: 60px; border-left: 1px solid #fff; width: 1px; padding-left: 20px;}*/
+.card-deadline .prod-time {right: 2px; width: 60px; color: #ff5b05; }
+.card-deadline .prod-time i { font-size: 14px; font-style: normal; position: absolute; top: 10px; display: block; }
+.card-deadline .prod-time span { font-family: 'PingFangSC-Light'; font-size: 40px; position: absolute; top: 45px; display: block; }
+.card-deadline .prod-time b { font-size: 14px; font-weight: normal; }
+
+/*card-account*/
+.card-account .account-num { font-size: 21px; width: 100%; margin-bottom: 12px; padding-top: 30px; text-align: center; color: #ff4951; }
+.card-account .account-tit { font-size: 14px; width: 100%; margin-bottom: 25px; text-align: center; color: #a4a9b0; }
+.card-account .account-company { font-size: 13px; width: 100%; padding-bottom: 17px; text-align: center; color: #ccc; }
+.card-box {position: absolute; top:56px; right: 20px; height: 72px; left: 93px; background: #ddd; padding-left: 10px; padding-top: 10px;}
+.card-prod .prod-price { font-size: 16px; line-height: 17px; position: absolute; top: 55px; right: 12px; left: 10px; height: 17px; color: #ff4951; }
+.card-prod .prod-title { font-size: 15px; line-height: 21px; position: absolute; top: 10px; right: 12px; left: 10px; height: 21px; color: #3f3f3f; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.card-prod .prod-quat { font-size: 12px; line-height: 17px; position: absolute; top: 30px; height: 17px; color: #a4a9b0; left:80px; right: 12px;  left: 10px;}
+
+.float { width: 100%; height: 100%; position: absolute; background: rgba(0, 0, 0, 0.6); }
+.tab_box{
+    position: absolute;
+    left:0;
+    right:0;
+    top:30%;
+    z-index: 99999;
+    background: white;
+}
+
+.tab_box>div{
+    position: relative;
+    margin-left:15px;
+    padding: 15px;
+    padding-left:0 ;
+}
+.tab_box>div:before{
+    display: none;
+    content:"";
+    box-sizing: border-box;
+    position: absolute;
+    height:1px;
+    top:0;
+    width:100%;
+    background: #ddd;
+    -webkit-transform: scale(1, 0.5);
+    transform: scale(1, 0.5);
+}
+.tab_box>div .left{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width:21px ;
+    height:21px;
+    text-align: center;
+    color: #26b1f7;
+}
+.tab_box .right{
+    margin-left:31px ;
+}
+.tab_box .right p:nth-of-type(1){
+    margin-bottom:10px;
+    font-size: 15px;
+    color: #3f3f3f;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tab_box .right p:nth-of-type(2){
+    font-size: 13px;
+    color: #a4a9b0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.float_bgk{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+    background: rgba(0,0,0,0.5);
+}

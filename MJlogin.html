@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/login.css" rel="stylesheet" >
+    <script>
+        $(document).ready(function() {
+            $(".question-img").click(function() {
+                $(".login-float").show();
+            });
+
+            $(".box-btn").click(function(){
+                $(".login-float").hide();
+            });
+
+            $(".next_btn").disabled = false;
+
+            var logcode = "";
+            $("#field").on("input",function(){
+                logcode = $("#field").val();
+                logcode = logcode.replace(/\D/g,'');
+                var arrLog= new Array();
+                if(logcode.length > 0){
+                    $(".next_btn").prop("disabled", false);
+                    btnState($(".next_btn").prop("disabled"));
+                    btnState(true);
+                    console.log("true"+logcode);
+                }
+                else{
+                    $(".next_btn").prop("disabled", true);
+                    btnState($(".next_btn").prop("disabled"));
+                    btnState(false);
+                    console.log("false"+logcode);
+                }
+
+                arrLog=logcode.split("");
+                for(var i=4;i<arrLog.length;i+=5){
+                    if(arrLog[i]!=" "){
+                        arrLog.splice(i,0," ")
+                    }
+                }
+                //console.info(arrLog)
+                $("#field").val(arrLog.join(""))
+            });
+
+            $("#field").trigger("input");
+
+            $(".next_btn").click(function(event) {
+               location.href = "myAccount.html";
+            });
+        });
+
+        function btnState(state){
+            if(state==false){
+                $(".next_btn").css({"color": "#bbb","background": "#ddd"});
+            }
+            else {
+                $(".next_btn").css({"color": "#fff","background": "#55c10e"});
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="login">
+    <p class="login-header">请输入您的绿色账户卡号</p>
+    <div class="login-content">
+        <input id="field" placeholder="请输入卡号" />
+        <img  class="scanImage" src="images/qrcodeImage.png">
+    </div>
+    <div class="login-code">
+        <img src="images/scanicon.png">
+    </div>
+    <button class="next_btn">下一步</button>
+    <div class="question">
+        <div class="question-img">
+            <img src="images/question.png" alt="">
+        </div>
+        <div class="question-tlt">绿色账户卡号在哪里?</div>
+    </div>
+</div>
+<div class="login-float">
+    <div class="login-box">
+        <div class="float-header">请找到你的绿色账户卡片</div>
+        <div class="float-img"><img src="images/popImage.png"></div>
+        <div class="box-btn">我知道了</div>
+    </div>
+</div>
+</body>
+</html>

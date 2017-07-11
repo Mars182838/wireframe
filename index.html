@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/index.css" rel="stylesheet" >
+    <link href="css/fonts.css" rel="stylesheet" >
+    <link href="css/style.css" rel="stylesheet" >
+    <script>
+        $(document).ready(function() {
+            certificationData = {time:"下午 2:14",title:"福利账户开通",nameTitle:"福员外新手引导",company:"易百信息技术(上海)股份有限公司"};
+            initFooter("福利账户");
+//            initUser();
+            initCertification(certificationData);
+            initAccount();
+            initWelfare();
+            initProd();
+//            initDeadline();
+
+            $("#exchange").click(function() {
+                location.href = "coupon_my.html";
+            });
+            $("#acconut").click(function() {
+                location.href = "weifare_detail.html";
+            });
+        });
+
+        document.addEventListener('AlipayJSBridgeReady', function () {
+            // 设置右按钮属性
+            AlipayJSBridge.call('setOptionMenu', {
+                title:"切换企业"
+            });
+        }, false);
+
+//        function initUser(){
+//            var userinfo     = {img:"images/james.jpg",name:"王小明",company:"易百信息技术(上海股份有限公司)",littleIcon:"images/header_shield.png",wireItem:"30,000.00",wireNum:"300"};
+//            var userinfoHtml = '<div class="header-box"><img src="images/headback.jpg"><div class="protrait"><img src="'+userinfo.img+'"></div><div class="name">'+userinfo.name+'</div><div class="company-box"><span class="company-icon"><img src="'+userinfo.littleIcon+'"></div><div class="company">'+userinfo.company+'</div></span></div>';
+//            var headercard = '<div class="header-card"><div class="card-list right" id="exchange"><div class="card_icon right"></div><div class="card_name">兑换券</div><div class="value">'+userinfo.wireNum+'</div></div><div class="card-list left" id="acconut"><div class="card_icon left"></div><div class="card_name">元宝</div><div class="value">'+userinfo.wireItem+'</div></div></div>';
+//            var dom      = userinfoHtml + headercard;
+//            $(".header").append($(dom));
+//        }
+
+        function initCertification(data) {
+            var certification = '<div class="column first"><div class="column-box"><div class="left-header"><div class="header-icon"><img src="images/lock.png"></div><div class="tel">'+data.title+'</div><div class="val">'+data.time+'</div></div><div class="column-num">'+data.nameTitle+'</div><div class="colmun-company">'+data.company+'</div></div></div>';
+            $("#footer").before($(certification));
+        }
+
+        function initAccount(data){
+            data = {"time":"下午 2:55","num":"+30,000.00","tit":"7月高温补贴","company":"易百信息技术(上海)股份有限公司"}
+            var card = '<div class="card card-account"><div class="card-icon"></div><div class="card-title">福利金到账提醒</div><div class="card-time">'+data.time+'</div><div class="account-num">'+data.num+'</div><div class="account-tit">'+data.tit+'</div><div class="account-company">'+data.company+'</div></div>';
+            $("#footer").before($(card));
+        }
+        function initWelfare(data){
+            data = {"title":"中秋礼遇-星巴克星悦月饼礼盒星巴克星悦月饼礼盒","time":"下午 2:55","imgUrl":"images/imgbig.png","text":"油炸大虾油炸大虾油炸大虾油油炸大虾油炸大虾油炸大虾油油炸大虾油炸大虾油炸大虾油油炸大虾油炸大虾油油炸大虾油炸大虾油炸大虾油","link":"prod_detail.html"};
+            var welfare = '<a class="card card-welfare" href="'+data.link+'"><div class="card-icon"></div><div class="card-title">'+data.title+'</div><div class="card-time">'+data.time+'</div><div class="img"><img src="'+data.imgUrl+'" ></div><div class="text">'+data.text+'</div><div class="card-line"></div><div class="card-link one">立即查看</div><div class="clear"></div></a>';
+            $("#footer").before($(welfare));
+        }
+//        function initProd(data){
+//            data = {"time":"下午 2:55","d":"images/img.png","title":"汉堡王天椒皇堡套餐椒皇堡套餐套餐套餐","price":"3,000 福利金","link":"prod_detail.html"};
+//            var prod = '<a class="card card-deadline card-prod" href="'+data.link+'"><div class="card-icon"></div><div class="card-title">精选商品推荐</div><div class="card-time">'+data.time+'</div><div class="img"><img src="'+data.imgUrl+'"></div><div class="prod-title">'+data.title+'</div><div class="prod-quat">套餐一份</div><div class="prod-price">'+data.price+'</div><div class="card-line"></div><div class="card-link one">立即兑换</div><div class="clear"></div></a>';
+//            $("#footer").before($(prod));
+//        }
+//        function initDeadline(data){
+//            var data = {"time":"下午 2:55","imgUrl":"images/img.png","title":"汉堡王天椒皇堡套餐","deadtime":"2016-12-31","onlytime":"还剩5天","link":"coupon_detail.html"};
+//            var deadline ='<div class="card card-deadline"><div class="card-icon"></div><div class="card-title">兑换券到期提醒</div><div class="card-time">下午 2:55</div><div class="img"><img src="images/img.png"></div><div class="deadline-content"><div class="prod-title">汉堡王天椒皇堡套餐</div><div class="prod-deadline">过期时间:2016-12-31</div></div><div class="line"></div><div class="prod-deadline prod-time"><i>还剩</i><span>5<b>天</b></span></div><div class="card-line"></div><a class="card-link" href="coupon_detail.html">立即使用</a><div class="clear"></div></div>';
+//            $("#footer").before($(deadline));
+//        }
+    </script>
+
+</head>
+<body>
+<div class="pagecontent">
+    <div class="header">
+        <div class="header-box">
+            <img src="images/headback.jpg">
+            <div class="content">
+                <div class="protrait"><img src="images/james.jpg"></div>
+                <div class="name">王小明</div>
+                <div class="company-box">
+                     <span class="company-icon"><img src="images/header_shield.png"> 易百信息技术(上海股份有限公司)</span>
+                </div>
+            </div>
+        </div>
+            <div class="header-card">
+                <div class="card-list left" id="acconut">
+                    <div class="card_icon left"></div>
+                    <div class="card_name">元宝</div>
+                    <div class="value">30,000.00</div>
+                </div>
+                <div class="card-list right" id="exchange">
+                    <div class="card_icon right"></div>
+                    <div class="card_name">兑换券</div>
+                    <div class="value">30,000.00</div>
+                </div>
+        </div>
+    </div>
+    <div class="card card-deadline">
+        <div class="card-icon"></div>
+        <div class="card-title">兑换券到期提醒</div>
+        <div class="card-time">下午 2:55</div>
+        <div class="img"><img src="images/img.png"></div>
+        <div class="deadline-content">
+            <div class="prod-title">汉堡王天椒皇堡套餐</div>
+            <div class="prod-deadline">过期时间:2016-12-31</div>
+            <div class="card-right">
+                <span class="right-line"></span>
+                <div class="prod-deadline prod-time">
+                    <i>还剩</i><span>5<b>天</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="card-line"></div>
+        <a class="card-link" href="coupon_detail.html">立即使用</a>
+        <div class="clear"></div>
+    </div>
+
+  <a class="card card-deadline card-prod" href="'+data.link+'">
+      <div class="card-icon"></div>
+      <div class="card-title">精选商品推荐</div>
+      <div class="card-time">下午 2:55</div>
+      <div class="img"><img src="images/img.png"></div>
+      <div class="card-box">
+          <div class="prod-title">汉堡王汉堡王汉堡王汉堡王汉堡王</div>
+          <div class="prod-quat">套餐一份</div>
+          <div class="prod-price">3,000</div>
+      </div>
+      <div class="card-line"></div>
+      <div class="card-link one">立即兑换</div>
+      <div class="clear"></div>
+  </a>
+
+
+    <div class="footer row" id="footer"></div>
+</div>
+
+<div class="float">
+    <div class="tab_box">
+        <div class="tab_box1">
+            <div class="left"><i class="icon icon-check"></i></div>
+            <div class="right">
+                <p>易百信息技术（上海）有限公股份司股份司股份司股份司</p>
+                <p>易百信息技术（上海）eqweqwe股份有限公司</p>
+            </div>
+        </div>
+        <div class="tab_box2">
+            <div class="left"><i class="icon icon-check"></i></div>
+            <div class="right">
+                <p>易百信息技术（上海）有限公股份司股份司股份司股份司</p>
+                <p>易百信息技术（上海）eqweqwe股份有限公司</p>
+            </div>
+        </div>
+        <div class="tab_box3">
+            <div class="left"><i class="icon icon-check"></i></div>
+            <div class="right">
+                <p>易百信息技术（上海）有限公股份司股份司股份司股份司</p>
+                <p>易百信息技术（上海）eqweqwe股份有限公司</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

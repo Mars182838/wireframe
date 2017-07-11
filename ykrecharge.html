@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优酷黄金会员充值</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <style>
+        *{margin: 0; padding: 0; }
+        body { width: 100%; font-family: 'PingFangSC-Regular'; line-height: 1; background: #f5f5f9; }
+
+        .contain {width: 100%; position: absolute; }
+        .contain_header {width: 100%; background: #fff;}
+        .header {width: 100%; height: 223px; margin: 0 auto; }
+        .header img {width: 100%; height: 100%; }
+        .line1 {position: absolute; left: 0; right: 0; border-top: 1px solid #ddd;}
+        .line2 {position: absolute; left: 15px; right: 0; border-top: 1px solid #ddd; }
+        .line3 {position: absolute; left: 15px; right: 15px; border-top: 1px solid #ddd; }
+
+        .contact-info {width: 100%; height: 45px;}
+        .name {float: left;font-size: 17px; padding:12px 15px; height: 21px; line-height: 21px; color: #000; }
+        .value {padding-left: 100px; height: 35px; line-height: 35px; padding-top:5px; }
+        .time {float: right; width: 110px; height: 25px; line-height: 25px; padding:10px; text-align: center;  color: #108EE9; }
+        .line { width: 1px; height: 25px; background-color: #ddd; float: left; margin-right: 5px;}
+        #phone {font-size: 17px; border: none; outline: none; }
+        #verify {font-size: 17px; border: none; outline: none; width: 90px;}
+        .btn {margin: 25px 15px; border-radius: 5px; color: #bbb; background: #ddd; height: 45px; line-height: 45px; text-align: center; font-size: 18px;}
+
+        .footer {padding-left: 15px; padding-right: 15px; position: fixed; bottom: 25px;}
+        .tips {width: 100px; font-size:15px; color: #666; padding-bottom: 10px;}
+        .tips-content {padding-top: 10px; font-size: 12px; color: #999; line-height: 18px;}
+
+        /*浮层信息*/
+        .float {position: absolute; width: 100%; height: 100%;  background: rgba(0, 0, 0, 0.5);  display:none;}
+
+        /*验证错误 */
+        /*.float .float-box {width: 147px; height: 36px; line-height: 36px; border-radius: 5px; text-align: center; background: #3A3A3A; color: #fff; margin:52% auto; font-size: 13px; }*/
+
+        /*充值失败*/
+        .float .fail-box {width: 72%; height: 132px; border-radius: 5px; text-align: center; background: #F8F8F8; margin: 52% auto;}
+        .fail-box .tlt {font-size: 17px; padding-top: 21px; color: #000;}
+        .fail-box .messgae {font-size: 13px; padding-top: 9px;}
+        .fail-line {border-bottom: 1px solid #ddd; padding-top: 21px;}
+        .sure_btn {padding-top: 12px; font-size: 16px; color: #00AAEE; height: 20px; line-height: 20px;}
+
+        /* 正在充值中*/
+        /*.recharge-box {width: 220px; height: 90px; line-height: 90px; border-radius: 5px; text-align: center; background: #fff; color: #000; margin:52% auto; font-size: 13px;}*/
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $(".btn").click(function() {
+
+                $(".float").show();
+
+                //自动消失代码
+//                setTimeout("$('.float').hide()",2000);
+            });
+
+            // 如果是充值失败的弹出样式
+            $(".sure_btn").click(function() {
+                $(".float").hide();
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <div class="contain">
+        <div class="contain_header">
+            <div class="header"><img src="images/ykImages/ykBackimage.png"></div>
+            <div class="line1"></div>
+            <div class="contact-info">
+                <div class="name">手机号</div>
+                <div class="value"><input id="phone" type="tel" value="" placeholder="输入手机号" /></div>
+            </div>
+            <div class="line2"></div>
+            <div class="contact-info">
+                <div class="name">动态密码</div>
+                <div class="time">
+                    <div class="line"></div>
+                    <div class="verfiy-time">获取动态密码</div>
+                </div>
+                <div class="value"><input id="verify" type="number" value="" placeholder="输入校验码" /></div>
+            </div>
+            <div class="line1"></div>
+        </div>
+        <div class="btn">确认充值</div>
+        <div class="footer">
+            <div class="tips">充值说明</div>
+            <div class="line3"></div>
+            <div class="tips-content">如您填写的手机号不是优酷账号，系统则将自动为您注册为优酷账号<br />充值成功后即将享受为期1月的优酷黄金会员权益<br />权益的最终解释权归优酷所有</div>
+        </div>
+    </div>
+    <div class="float">
+
+        <!--输入正确手机号-->
+        <!--<div class="float-box">请输入正确的手机号</div>-->
+
+        <!--充值失败-->
+        <div class="fail-box">
+            <div class="tlt">充值失败</div>
+            <div class="messgae">可能充值的人太多了,请稍后再试</div>
+            <div class="fail-line"></div>
+            <div class="sure_btn">确定</div>
+        </div>
+
+        <!--正在充值中-->
+        <!--<div class="recharge-box">正在为您充值中,请稍后...</div>-->
+
+    </div>
+</body>
+</html>

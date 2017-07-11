@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>兑换详情</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order_detail.css">
+    <script>
+        $(document).ready(function() {
+            initNum(5);
+            $(".num-list .list-item").click(function(){
+                $(this).addClass('acitved').siblings().removeClass('acitved');
+            })
+            $("body .btn").click(function(){
+                location.href = "recharge_result.html";
+            });
+        });
+        function initNum(num){
+            var dom = '<div class="line2"></div><div class="tit">兑换数量</div><div class="num-list">';
+            for(var i = num; i>1; i--){
+                dom += '<div class="list-item">'+i+'</div>';
+            }
+            dom += '<div class="list-item acitved">1</div></div><div class="line2"></div>';
+            $('.exchange-num').append($(dom));
+        }
+    </script>
+</head>
+
+<body>
+    <div class="detial-content">
+        <div class="prod-info">
+            <div class="prod-tit prod-item">
+                <div class="tit">商品名称</div>
+                <div class="text">星巴克中杯饮料</div>
+            </div>
+            <div class="line1"></div>
+            <div class="prod-time prod-item">
+                <div class="tit">有效期至</div>
+                <div class="text">2016-12-31</div>
+            </div>
+            <div class="line1"></div>
+            <div class="prod-city prod-item">
+                <div class="tit">适用店铺</div>
+                <div class="text" style="line-height: 20px;">
+                    全国所有星巴克店铺均支持(除机场、火车站、高铁站内的星巴克之外)
+                </div>
+            </div>
+            <div class="line2"></div>
+        </div>
+        <div class="exchange-num">
+        </div>
+        <div class="remian-wire">
+            <div class="tips">福利券余额：3200.00</div>
+            <div class="prod-info">
+                <div class="line2"></div>
+                <div class="prod-cost prod-item">
+                    <div class="tit">本次花费</div>
+                    <div class="text">3,200.00福利金</div>
+                </div>
+                <div class="line2"></div>
+            </div>
+        </div>
+        <div class="btncontent">
+             <div class="btn">确认兑换</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兑换券详情</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/MJorder_detail.css" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+            var formData = [{
+                    name:"商品名称",
+                    detail:"5元抵扣券(满58元可用)"},
+                {
+                    name:"有效期至",
+                    detail:"2016-12-31"},
+                {
+                    name:"支持门店",
+                    detail:"全国所有星巴克店铺均支持(除机场、火车站、高铁站内的星巴克之外)"}
+            ];
+
+            var consumeData = {tlt:"您的积分:8092",name:"本次花费"};
+
+            initForm(formData);/// 创建头部
+            initConsume(consumeData);
+            initNumlist();
+
+            $(".btn").click(function() {
+                location.href= "MJlogin.html";
+            });
+        });
+
+        var orderInfo = {
+            welfareAmt: 8092.00,
+            salePrice: 10000
+        }
+
+        var buyNum = 1;
+        function initNumlist() {
+            var num = Math.floor(orderInfo.welfareAmt / (orderInfo.salePrice / 100));
+            num = Math.min(num, 5);
+            var dom = '';
+            if (num >= 1) {
+                for (var i = num; i > 1; i--) {
+                    dom += '<div class="num-item">' + i + '</div>';
+                }
+                dom += '<div class="num-item actived">1</div></div>';
+            }
+            $('.num-list').append($(dom));
+
+            var totalAmt = orderInfo.salePrice*buyNum;
+
+            $(".num").html(totalAmt/100+"积分");//需要花费积分
+            $(".tlt").html("您的积分:"+orderInfo.welfareAmt);
+
+            $(".num-item").click(function(){
+                buyNum =  $(this).text();
+                $(this).addClass('actived').siblings().removeClass('actived');
+                totalAmt = orderInfo.salePrice*buyNum;
+                $(".num").html(totalAmt/100+"积分");//需要花费积分
+                console.log(buyNum);
+            })
+        }
+
+        function initForm(data) {
+            var dom = "";
+            for (var i in data){
+                dom += "<div class='order_list'><div class='left'>"+data[i].name+"</div><div class='right'>"+data[i].detail+"</div></div>"
+            }
+            $(".order_form").append($(dom));
+            $(".order_list:last-child").css({border:"none"});
+        }
+
+        function initConsume(data) {
+            var consume = '<div class="consume-box"><div class="tlt">'+data.tlt+'</div><div class="consume-num"><div class="num"></div><div class="name">'+data.name+'</div></div></div></div><div class="button-box"><input type="button" value="确认兑换" class="btn">';
+            $(".consume").append($(consume));
+        }
+    </script>
+</head>
+<body>
+<div class="contain">
+    <div class="order_form"></div>
+    <div class="exchange-num"><div class="exhange-box"><div class="num-list"></div><div class="name">兑换数量</div></div></div>
+    <div class="consume"></div>
+</div>
+
+<div class="float">
+    <div class="float-box">
+        <!--<div class="float-contianer">-->
+            <!--<div class="icon-close close"></div>-->
+            <!--<div class="phonetips">输入139****8877收到的验证码</div>-->
+            <!--<div class="codeinput">-->
+                <!--<input type="text" placeholder="请输入验证码">-->
+                <!--<span class="btn">发送校验码</span>-->
+                <!--<div class="errtips">校验码错误</div>-->
+            <!--</div>-->
+            <!--<div class="btncontent"><div class="btn disable">完成</div></div>-->
+        <!--</div>-->
+
+        <div class="phone-contianer">
+            <div class="icon-close close"></div>
+            <input class="phone" type="text" placeholder="请输入手机号">
+            <div class="codeinput">
+                <input type="text" placeholder="请输入验证码">
+                <span class="btn">发送校验码</span>
+                <div class="errtips">校验码错误</div>
+            </div>
+            <div class="btncontent"><div class="btn disable">完成</div></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

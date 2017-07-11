@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的兑换券</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/MJCoupon.css">
+
+    <script>
+        $(document).ready(function(){
+            initProductList();
+        });
+
+        document.addEventListener('AlipayJSBridgeReady', function() {
+            AlipayJSBridge.call('setOptionMenu', {
+                reset: true
+            });
+        }, false);
+
+        var listNum = 3;
+        function initProductList() {
+            var dom = '';
+             for (var i = 0; i < listNum; i++){
+                 dom += '<div class="card"><div class="card-img"><img src="images/img.png" alt=""></div><div class="card-content"><div class="card-tit">星巴克中杯</div><div class="card-endtime">2天内有效</div><div class="card-code">1231 3122 1231</div></div></div></div>';
+             }
+            $(".coupon_list").append($(dom));
+        }
+    </script>
+</head>
+<body>
+
+<div class="coupon_table">
+    <div class="ward-tips">有<font color="red">1</font>张券即将到期</div>
+    <div class="coupon_list"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+.pagecontent{padding-bottom: 70px;}
+.prod-banner{width: 100%;background: #fff!important;}
+.swiper-container{width: 100%; height: 100%;}
+.swiper-container img{width: 100%;}
+.prod-prof{ width: 100%; padding-left: 15px; box-sizing: border-box; background: #fff;}
+.prod-prof .tit{padding-top: 12px; font-size: 17px;}
+.prod-prof .price{padding-top: 8px; font-size: 17px; color: #ff4951; padding-bottom: 8px;}
+.prod-prof .price i{font-style: normal; font-size: 12px; padding-left: 4px;}
+.prod-desc{padding:15px 15px; background: #eee; color: #ccc;}
+.icon-quro{padding-top: 3px; font-size: 21px; float: left;}
+.prod-desc .descript{padding-top: 15px; padding-left: 26px;font-size: 13px; line-height: 17px; }
+.prod-info .text{color: #888; padding-left: 10px;}
+.prod-notice {margin-top: 15px;}
+.prod-notice .bigtit, .prod-info .bigtit{font-size: 17px; color: #000!important;}
+.prod-notice .tit{color: #888;}
+.prod-notice .text{font-size: 15px; padding-right: 16px; line-height: 18px;}
+.prod-notice .prod-item{position: relative;}
+.prod-notice .arrright{position: absolute; right: 13px; color: #888; top: 16px;}
+
+
+.small .tit, .small .text{font-size: 13px!important;}

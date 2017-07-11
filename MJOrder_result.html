@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兑换结果</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.loadTemplate-1.4.4.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/MJOrder_result.css">
+
+    <script>
+        $(document).ready(function(){
+            var formData = [{
+                    name:"商品名称",
+                    detail:"哈根达斯单球冰淇淋"},
+                {
+                    name:"有效期至",
+                    detail:"2016-12-31"},
+                {
+                    name:"支持门店",
+                    detail:"全国指定门店,机场店和加盟店除外 >"
+                }
+            ];
+
+            initList(formData);
+
+            $(".btn").click(function() {
+                location.href = "MJlogin.html";
+            });
+        });
+
+        function initList(formData) {
+            var dom = "";
+            for (var i in formData){
+                dom += "<div class='list-item'> <div class='list-extra'> "+formData[i].detail+" </div> <div class='list-content'> "+formData[i].name+" </div></div>"
+            }
+            $(".detail-card").append($(dom));
+            $(".list-item:last-child").css({border:"none"});
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="detail-header">
+    <div class="detail-content">
+        <div class="detai-box">
+            <img src="images/result_success.png">
+            <div class="result"><b>兑换成功</b></div>
+            <div class="detail">使用时请至 [兑换记录] 中寻找</div>
+        </div>
+    </div>
+</div>
+<div class="detail-card"></div>
+<div class="btn">查看我的兑换券</div>
+</body>
+</html>

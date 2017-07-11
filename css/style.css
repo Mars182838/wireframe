@@ -1,0 +1,93 @@
+body, a, input, ul, li { margin: 0; padding: 0; }
+body { width: 100%; font-family: 'PingFangSC-Regular'; line-height: 1; background: #f5f5f9; }
+
+a { text-decoration: none; -webkit-tap-highlight-color: transparent !important; -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important; background: none; }
+::-webkit-input-placeholder { /* WebKit browsers */
+color: #ccc; }
+input[type='text'], div{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.row { width: 100%; }
+.columns.two { width: 33.33%; float: left; box-sizing: border-box; }
+.columns.three { width: 33.33%; float: left; box-sizing: border-box; }
+.shrink { -webkit-transform: scale(0.8); -o-transform: scale(1); display: inline-block }
+.pdnone { padding: 0 !important; }
+
+.clear { clear: both; overflow: hidden; }
+.line1 { position: absolute; left: 15px; right: 0; border-top: 1px solid #ddd; }
+.line2 { position: absolute; left: 0; right: 0; border-top: 1px solid #ddd; }
+.line3 { position: absolute; left: 15px; right: 0;  border-top: 1px solid #eee;}
+/*table style*/
+.prod-info { position: relative; width: 100%; background: #fff; }
+.prod-info .tit { font-size: 15px; float: left; }
+.prod-info .text { padding-left: 85px; text-align: right; font-size: 15px; }
+.prod-info .prod-item { padding: 15px; clear: both; overflow: hidden; }
+.prod-info .input { position: absolute; left: 100px; right: 110px; }
+.prod-info .input input { border: none; outline: none; width: 100%; font-size: 16px; }
+.prod-info .send-code { border-left: 1px solid #ddd; float: right; text-align: right; width: 94px; font-size: 17px; color: #108ee9; }
+.prod-info .send-code.disable { color: #888; }
+.prod-info .tips { padding: 15px 15px 9px; color: #888; font-size: 13px; background: #f5f5f9; }
+.form .tit, .form .text { font-size: 17px !important; }
+.form .prod-item { padding: 14px 15px; }
+.prod-info .text.nowrap{overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding-left:25px;padding-right: 20px;}
+/*footer*/
+.footer { width: 100%; height: 49px; position: fixed; bottom: 0; border-top: 1px solid #ddd; background: #fff; z-index: 9999; }
+.footer a { display: block; height: 49px; padding: 7px 0; box-sizing: border-box; text-decoration: none; }
+.footer .img { width: 22px; height: 22px; margin: 0 auto 2px; }
+.footer .columns:nth-of-type(1) .img { background: url(../images/footer_01.png) no-repeat; background-size: 100% auto; }
+.footer .columns:nth-of-type(2) .img { background: url(../images/footer_02.png) no-repeat; background-size: 100% auto; }
+.footer .columns:nth-of-type(3) .img { background: url(../images/footer_03.png) no-repeat; background-size: 100% auto; }
+.footer .footer-tit { width: 100%; text-align: center; font-size: 10px; color: #888; }
+.footer a.actived .footer-tit { color: #108ee9; }
+.footer a.actived .img { background-position: 0 bottom !important; }
+
+/*button style*/
+.btncontent { padding: 0 15px; width: 100%; box-sizing: border-box; margin-top: 25px; }
+.btncontent .btn, .fixbtn .btn {display:block; border-radius: 5px; background: #108ee9; color: #fff; text-align: center; width: 100%; height: 42px; line-height: 42px; background-clip: padding-box; }
+.btn.disable { background: #ddd; color: #bbb; }
+.fixbtn { position: fixed; height: 60px; border-top: 1px solid #ddd; bottom: 0; left: 0; right: 0; padding: 8px 15px; background: #fff; box-sizing: border-box; }
+.actived {
+    color: #108ee9!important;
+}
+/*topbar*/
+.topbar { height: 45px; padding: 7px 0; border-bottom: 1px solid #ddd; box-sizing: border-box; background: #fff; position: fixed; z-index:999;}
+.topbaritem { text-align: center; line-height: 30px; border-right: 1px solid #ddd; }
+.topbaritem:last-of-type { border: none; }
+
+/*transition*/
+.trans05 { transition: 0.5s ease; -webkit-transition: all 0.5s ease; -moz-transition: 0.5s ease; }
+
+
+/*cardfail*/
+.card-recharge { width: 100%; background: #fff; position: relative; padding-top: 50px; margin-bottom: 15px; }
+.recharge-tips { width: 100%; padding-top: 28px; text-align: center; font-size: 21px; color: #000; }
+.recharge-navtips { width: 100%; padding: 14px 0 23px; text-align: center; font-size: 14px; color: #888;}
+
+/*tofoot*/
+.cardmore{display: block; text-align: center; margin-top: 15px; color: #888; font-size: 13px;}
+.cardmore[href]{ text-decoration: underline;}
+/*bgk*/
+.bgk { position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 9999; background: rgba(0, 0, 0, 0.6); }
+.bgk .tit { background: #3a3a3a; color: #fff; font-size: 14px; border-radius: 6px; padding: 10px 15px; display: inline-block; box-sizing: border-box; }
+.logobrand.ptburgerking { background-position: 0 -900% !important; }
+.logobrand.ptkfc { background-position: 0 -500% !important; }
+.logobrand.pthaagendazs { background-position: 0 -400% !important; }
+.logobrand.ptcosta { background-position: 0 -1700% !important; }
+.logobrand.ptpizzahut { background-position: 0 -2100% !important; }
+.logobrand.ptgodiva { background-position: 0 -1100% !important; }
+.logobrand.ptwatsons { background-position: 0 0 !important; }
+.logobrand.ptxiaoyang { background-position: 0 -100% !important; }
+.logobrand.ptxiabu { background-position: 0 -300% !important; }
+.logobrand.ptcoldstone { background-position: 0 -600% !important; }
+.logobrand.ptcarsone { background-position: 0 -700% !important; }
+.logobrand.ptwanda { background-position: 0 -800% !important; }
+.logobrand.ptmisterdonut { background-position: 0 -1000% !important; }
+.logobrand.ptdq { background-position: 0 -1200% !important; }
+.logobrand.pt711 { background-position: 0 -1300% !important; }
+.logobrand.ptmannings { background-position: 0 -1600% !important; }
+.logobrand.ptpacific { background-position: 0 -1800% !important; }
+.logobrand.ptstarbucks { background-position: 0 -1900% !important; }
+.logobrand.ptall { background-position: 0 -2200% !important; }
+.logobrand.ptcoco { background-position: 0 -2300% !important; }
+
+/*.logobrand.ptcandymaster{background-position: 0 -2300%!important;}*/
+.logobrand.ptjiyejia { background-position: 0 -2400% !important; }
+.logobrand.ptyouku { background-position: 0 -2600% !important; }

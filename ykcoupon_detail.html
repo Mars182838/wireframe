@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兑换券详情</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <style>
+
+        *{margin: 0; padding: 0; }
+        body { width: 100%; font-family: 'PingFangSC-Regular'; line-height: 1; background: #ff533b; }
+        .contain {position: relative; margin: 58px 15px; border-radius: 5px; background: #fff; }
+        .brand-icon { position: absolute; top: -30px; right: 0; left: 0; width: 60px; height: 60px; margin: 0 auto; border-radius: 50%; background: #fff; box-shadow: 1px 1px 2px #ddd; }
+        .brand-icon .img {width: 36px; height: 36px; margin: 12px auto;background:url(images/brandLogo.png) no-repeat; background-size: 100% auto;}
+        .img.icon {background-position: 0 100%;}
+        .prod-tit {padding-top: 60px; font-size: 17px; text-align: center; color: #000;}
+        .prod-tips {padding-top: 15px; font-size: 14px; text-align: center; color: #888;}
+        .btn {border-radius: 5px; border: 1px solid #108ee9; width: 100px; font-size: 15px; color: #108ee9; height: 35px; line-height: 35px; text-align: center; margin: 45px auto;}
+        .prod-info{border-radius:5px;}
+        .prod-info .prod-item{ padding: 15px 9px 15px 15px;}
+        .prod-time { border-top: 1px dashed #ddd; }
+        .radius-l, .radius-r { position: absolute; top: 225px; width: 15px; height: 15px; border-radius: 50%; background: #ff533b; }
+        .radius-l { left: -7px; }
+        .radius-r { right: -7px; }
+
+        .tit {float: left; font-size: 15px;}
+        .text {text-align: right; padding-right: 15px;}
+        .line1 {position: absolute; left: 15px; right: 0; border-top: 1px solid #ddd; }
+    </style >
+
+</head>
+<body>
+
+<div class="contain">
+    <div class="brand-icon"><div class="img icon"></div></div>
+    <div class="prod-tit">优酷 黄金会员卡 (1个月)</div>
+    <div class="prod-tips">请登录您的优酷会员账号后,完成充值</div>
+    <div class="btn"><a>前往充值</a></div>
+    <div class="prod-info">
+        <div class="radius-l"></div>
+        <div class="radius-r"></div>
+        <div class="prod-time prod-item">
+            <div class="tit">购买日期</div>
+            <div class="text">2016-05-02</div>
+        </div>
+        <div class="line1"></div>
+        <div class="prod-city prod-item">
+            <div class="tit">有效期至</div>
+            <div class="text">2017-12-31</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

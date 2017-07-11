@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的兑换券</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/coupon.css">
+    <style>
+    .card-icon1 {
+        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+        background: url(images/coupfail.jpg) no-repeat;
+        background-size: 100%;
+    }
+
+    .card-recharge {
+        background: #f5f5f9;
+    }
+
+    .recharge-navtips {
+        font-size: 15px;
+    }
+    </style>
+
+
+    <script>
+        $(document).ready(function(){
+            $(".card-endtime").remove();
+            var fail = true;
+            var boarddiv;
+            if(fail){
+                 boarddiv = "<div class='card-endtime' style='color: red;'>2天内有效</div>";
+            }
+            else{
+                boarddiv = "<div class='card-endtime' style='color: red;'>有效期至:2016-12-31</div>";
+            }
+            $(".card-tit").append(boarddiv);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="my-contain">
+        <div class="warn-tips">有
+            <font color="#fa5b05">1</font>张券即将到期</div>
+        <div class="card">
+            <div class="card-img"><img src="images/img.png" alt=""></div>
+            <div class="card-content">
+                <div class="card-tit">星巴克中杯</div>
+                <div class="card-endtime">2天内有效</div>
+                <div class="card-code">1231 3122 1231</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="images/img.png" alt=""></div>
+            <div class="card-content">
+                <div class="card-tit">星巴克中杯</div>
+                <div class="card-endtime">有效期至:2016-12-31</div>
+                <div class="card-code">1231 3122 1231</div>
+            </div>
+        </div>
+
+
+        <!--<a class="cardmore" href="coupon_out.html">查看失效的兑换券</a>-->
+ <!-- <div class="card-recharge">
+        <div class="card-icon1"></div>
+        <div class="recharge-navtips">没有记录</div>
+    </div> -->
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>兑换券详情</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/coupon.css">
+</head>
+<script>
+    $(document).ready(function(){
+        $(".prod-city").click(function() {
+            location.href="$hostUtil.hostbase/welfare/mall/lbs_stores_list?brandName=${data.brandName}";
+        });
+        jQuery('#qrcode').qrcode({
+            width: 180,
+            height: 180,
+            text: '$!{data.snCode}'
+        });
+    });
+</script>
+<body style="background: #ff533b;">
+    <div class="contain">
+        <!--<div class="brand-icon">-->
+            <!--<div class="img logobrand ptstarbucks"></div>-->
+        <!--</div>-->
+        <div class="prod-tit">星巴克中杯</div>
+        <div class="prod-tips">请在门店兑换时，向店员出示以下二维码</div>
+        <div class="prod-qrcode">
+            <!--<img src="${data.qrCodeUrl}"/>-->
+            <div id="qrcode">
+                <div class="qrcode-logo"></div>
+            </div>
+            <div class="qrcode-tit">$!{data.snCodeDesc}</div>
+        </div>
+        <div class="prod-info">
+            <div class="radius-l"></div>
+            <div class="radius-r"></div>
+            <div class="prod-time prod-item">
+                <div class="tit">有效期至</div>
+                <div class="text">2016-12-31</div>
+            </div>
+            <div class="line1"></div>
+            <div class="prod-city prod-item">
+                <div class="tit">支持门店</div>
+                <div class="text">
+                    全国所有星巴克店铺均支持(除机场、火车站、高铁站内的星巴克之外)</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

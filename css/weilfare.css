@@ -1,0 +1,8 @@
+
+.detail-item{height: 62px; width: 100%; padding:0 15px; box-sizing: border-box; background: #fff; }
+.detail-item .tit{padding-top: 13px; font-size: 17px; clear: both; overflow:hidden;}
+.detail-item .text{padding-top: 6px; color: #888; font-size: 13px; clear: both; overflow:hidden;}
+.detail-item .tit-l, .detail-item .company{float: left;}
+.detail-item .total, .detail-item .time{float:right;}
+.detail-item .time{font-size: 14px;}
+.actived{color: #108ee9!important;}

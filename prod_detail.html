@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>星巴克中杯</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/proddetail.css">
+    <script>
+    $(document).ready(function() {
+        initBanner();
+        initProd();
+        $("body .btn").click(function() {
+            location.href = "order_detail.html";
+        })
+    });
+    function initBanner(){
+        var imglist = ['images/01.jpg','images/02.jpg','images/03.jpg'];
+        var dom = '<div class="swiper-container"><div class="swiper-wrapper">';
+        $.each(imglist, function(index, val) {
+            dom += '<div class="swiper-slide"><img src="'+val+'"></div>';
+        });
+        dom += '</div><div class="swiper-pagination"></div></div>';
+        $(".prod-banner").append(dom);
+        var swiper = new Swiper('.swiper-container', {
+            autoplay: 1000,
+            loop: true,
+            speed: 1000,
+            pagination : '.swiper-pagination',
+            paginationType : 'bullets',
+            autoHeight: true
+        });
+    }
+    function initProd(){
+        var prof = '<div class="line2"></div><div class="tit">新品手工调制(任意口味)新品手工调制(任意口味)</div><div class="price">99999<i>福利金</i></div><div class="line2"></div>';
+        var desc = ' <div class="icon-quro"></div> <div class="descript">新品手工调制(任意口味)新品手工调制(任意口味)新品手工调制(任意口味)新品手工调制(任意口味)新品手工调制(任意口味)新品手工调制(任意口味)</div>';
+        var norms = '<div class="line2"></div><div class="prod-time prod-item"><div class="bigtit tit">规格</div><div class="text">新品手工调制(任意口味)</div></div><div class="line2"></div>';
+        var notice = '<div class="line2"></div><div class="prod-item"><div class="bigtit tit">兑换须知</div></div><div class="line2"></div>';
+        var data = [{tit:"有效期","text":"不限期购买成功后60日内有效"},{tit:"关于取货","text":"结账前向店员出示兑换的二维码结账前向店员初始兑换码"},{tit:"购买限制","text":"不限"},{tit:"退货退款",text:"所有通过积分兑换的商品均不予退还"},{tit:"支持门店","text":"全国范围，部分门店及临时提领点","length":"1"},{tit:"详细规则","text":"点击查看详细规则","length":"1"}];
+        $.each(data, function(index, val) {
+            var arr = ''
+            if(val.length && val.length ==1){
+                arr = '<div class="arrright icon-form-arrow"></div>';
+            }
+            notice += '<div class="prod-item small"><div class="tit">'+val.tit+'</div><div class="text">'+val.text+'</div>'+arr+'</div><div class="line3"></div>';
+        });
+        notice += ' <div class="line2"></div>';
+        $(".prod-prof").append($(prof));
+        $(".prod-desc").append($(desc));
+        $(".prod-norms").append($(norms));
+        $(".prod-notice").append($(notice));
+    }
+    </script>
+    <style>
+        img{width: 100%;}
+    </style>
+</head>
+
+<body>
+    <div class="pagecontent">
+        <div class="prod-banner">
+        </div>
+        <div class="prod-prof">
+        </div>
+        <div class="prod-desc">
+        </div>
+        <div class="prod-norms prod-info">
+        </div>
+        <div class="prod-notice prod-info">
+        </div>
+    </div>
+    <div class="fixbtn">
+        <div class="btn">立即兑换</div>
+    </div>
+</body>
+
+
+</html>

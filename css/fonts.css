@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'logos';
+  src:  url('fonts/logos.eot?fj327j');
+  src:  url('fonts/logos.eot?fj327j#iefix') format('embedded-opentype'),
+    url('fonts/logos.ttf?fj327j') format('truetype'),
+    url('fonts/logos.woff?fj327j') format('woff'),
+    url('fonts/logos.svg?fj327j#logos') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'logos' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-unchecked:before {
+  content: "\e902";
+}
+.icon-selected:before {
+  content: "\e903";
+}
+.icon-arrow:before {
+  content: "\e904";
+}
+.icon-121121:before {
+  content: "\e90b";
+}
+.icon-commodity:before {
+  content: "\e90c";
+}
+.icon-remind:before {
+  content: "\e90d";
+}
+.icon-fail:before {
+  content: "\e90e";
+}
+.icon-voucher:before {
+  content: "\e910";
+}
+.icon-chip:before {
+  content: "\e911";
+}
+.icon-screen:before {
+  content: "\e912";
+}
+.icon-recommend:before {
+  content: "\e913";
+}
+.icon-count-down:before {
+  content: "\e914";
+}
+.icon-already-used:before {
+  content: "\e915";
+}
+.icon-be-overdue:before {
+  content: "\e916";
+}
+.icon-authentication:before {
+  content: "\e917";
+}
+.icon-nearby:before {
+  content: "\e90a";
+}
+.icon-form-arrow:before {
+  content: "\e900";
+}
+.icon-notice-arrow:before {
+  content: "\e901";
+}
+.icon-Refresh:before {
+  content: "\e907";
+}
+.icon-question-mark:before {
+  content: "\e908";
+}
+.icon-delete:before {
+  content: "\e909";
+}
+.icon-telephone:before {
+  content: "\e800";
+}
+.icon-arrow-right:before {
+  content: "\e802";
+}
+.icon-card:before {
+  content: "\e804";
+}
+.icon-check:before {
+  content: "\e805";
+}
+.icon-close:before {
+  content: "\e806";
+}
+.icon-local:before {
+  content: "\e807";
+}
+.icon-local2:before {
+  content: "\e808";
+}
+.icon-quro:before {
+  content: "\e809";
+}
+.icon-drop-down:before {
+  content: "\e905";
+}
+.icon-pull-up:before {
+  content: "\e906";
+}
+

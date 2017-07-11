@@ -1,0 +1,15 @@
+*{margin: 0; padding: 0; }
+body { width: 100%; font-family: 'PingFangSC-Regular'; line-height: 1; background: #f5f5f9; }
+
+.detail-header {width: 100%; }
+.detail-header .detail-content {width: 100%; background: #fff; position: relative; margin: 0 auto; text-align: center;}
+.detail-content .detai-box {padding-top: 60px;}
+.detail-content .detai-box img {width: 90px; height: 90px;}
+.detai-box .result {font-size: 20px; color: #333; margin-top: 25px;}
+.detai-box .detail {font-size: 15px; color: #888; margin-top: 15px;padding-bottom: 20px;}
+
+.detail-card {width: 100%; background: #fff; position: relative; margin-top: 15px; }
+.detail-card .list-item {height: 40px; line-height: 40px; margin: 0 0 0 15px; border-bottom: 1px solid #ddd; }
+.detail-card .list-item .list-extra {float: right; margin-right: 15px; color: #888; font-size: 15px; }
+
+.btn {margin: 25px 15px; border-radius: 5px; color: #fff; background: #55c10e; height: 45px; line-height: 45px; text-align: center;}

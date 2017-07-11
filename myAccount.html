@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link href="css/myaccount.css" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+            $(".toMyCount").click(function() {
+               location.href = 'coupon_my.html';
+            });
+            $(".toRecord").click(function() {
+                location.href = 'coupon_detail.html';
+            });
+
+            var person = {
+                imgUrl:"images/info.jpg",
+                name:"赵四",
+                count:"1111111111",
+                code:"images/lALOhD_tIGnNAW4_366_105.png",
+                myCount:"66,666",
+                record:"2"
+            }
+            personData(person);
+            $(".noList").css({display:"none"});
+
+            var data = [{
+                imgUrl: "images/01.jpg",
+                logId:"1",
+                logUrl:"",
+                goodsName: "汉堡王",
+                goodsCode: "皇堡/天椒皇堡套餐",
+                goodsPrice: "3,200",
+                prodId:"",
+                prodCaseId:""
+            },
+                {
+                    imgUrl: "images/02.jpg",
+                    logId:"2",
+                    logUrl:"",
+                    goodsName: "哈根达斯",
+                    goodsCode: "新品手工调制新品手",
+                    goodsPrice: "3,200",
+                    prodId:"3",
+                    prodCaseId:""
+                },
+                {
+                    imgUrl: "images/03.jpg",
+                    logId:"3",
+                    logUrl:"",
+                    goodsName: "丽芙家居",
+                    goodsCode: "皇堡/天椒皇堡套餐",
+                    goodsPrice: "3,200",
+                    prodId:"",
+                    prodCaseId:""
+                },
+                {
+                    imgUrl: "images/04.jpg",
+                    logId:"4",
+                    logUrl:"",
+                    goodsName: "万宁",
+                    goodsCode: "新品手工调制新品手工调",
+                    goodsPrice: "3,200",
+                    prodId:"",
+                    prodCaseId:""
+                }];
+
+            initProductList(data);
+            $(".productList").on("click",".product",function(){
+                location.href = 'account_detail.html'
+            })
+
+            $(".productList").on("click",".button",function(){
+                location.href = 'account_detail.html'
+            })
+
+
+        });
+
+        function personData(person){
+            $(".headImage").attr("src",person.imgUrl);
+            $(".personName").html(person.name);
+            $(".personCount").html(person.count);
+//            $(".personName").html(person.code);
+            $(".record").html(person.record);
+            $(".mycount").html(person.myCount);
+        }
+
+        function initProductList(data) {
+            if(data == 1){
+                $(".noList").show();
+                $(".productList,.e-coupon").hide();
+            }
+            else{
+                $(".productList,.e-coupon").show();
+            }
+
+            for(var i in data){
+                var  logoImage = "<div class='logoImage'><img src='"+data[i].imgUrl+"'></div>";
+                var productcontent = "<div class='product-content'><div class='logo'><img src='images/logo"+(parseInt(i)+1)+".png'><div class='name'>"+data[i].goodsName+"</div></div><div class='tlt']>"+data[i].goodsCode+"</div><div class='account'>"+data[i].goodsPrice+"积分</div></div>";
+                var button = '<div class="button">兑换</div>';
+                var div = "<div class='product' prodId='"+data[i].prodId+"' prodCodeId='"+data[i].prodCodeId+"'>"+logoImage+productcontent+button+"</div>";
+                $(".productList").append(div);
+            }
+
+            $(".product:last-child").css({border:"none"});
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="pagecontent">
+    <div class="user-content">
+        <div class="userpage">
+            <div class="dicbox1">
+                <img class="headImage" src="">
+            </div>
+            <div class="personName"></div>
+            <p>
+                绿账卡号：<span  class="personCount"></span>
+            </p>
+        </div>
+        <div class="userCount">
+            <div class="toRecord">
+                <div class="record"></div>
+                <div class="detail">兑换记录</div>
+            </div>
+            <div class="toMyCount">
+                <div class="mycount"></div>
+                <div class="detail">我的积分</div>
+            </div>
+        </div>
+    </div>
+    <div class="e-coupon">
+        <p></p>
+        <p>电子券兑换区</p>
+    </div>
+    <div class="productList">
+    </div>
+    <div class="noList">
+        <img src="images/lALOhLs2O8y0zLQ_180_180.png" alt="">
+        <p>没有商品<span style="color: red">视图咯</span></p>
+        <p>如需详细了解请登录绿色账户官网查看</p>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

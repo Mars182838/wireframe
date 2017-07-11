@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>激活账户</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="css/act.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        document.addEventListener('AlipayJSBridgeReady', function() {
+            AlipayJSBridge.call('setOptionMenu', {
+                reset: true
+            });
+        }, false)
+        $(function(){
+        	$(".act_foot").on("click",function(){
+        		location.href="actgift.html";
+        	})
+        })
+    </script>
+</head>
+
+<body>
+     <img class="head_img" src="images/lADOlowNPcz6zQLu_750_250.jpg"/>
+    <p class="content_p">
+        <span>企业名称</span>
+        <input style="outline: none" placeholder="请填写您的企业名称"/>
+    </p>
+    <p class="content_tit">如果未找到您的企业，可能其暂未接入福员外平台</p>
+    <div class="act_foot">
+       <img src="images/lALOlowNO3TMlQ_149_116.png">
+        <div class="act_box">
+       <span >激活福员外礼品卡片<i class="icon icon-form-arrow"></i></span>
+            </div>
+    </div>
+</body>
+</html>

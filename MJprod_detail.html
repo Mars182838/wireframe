@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/MJprod_detail.css">
+
+    <script>
+        var prodDetail = {
+            "prodName":'5元抵扣券(满58可用)',
+            "prodPrice":'1元 + 10易积分',
+            "imglist": [
+                "http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/400345265645483a9a6004922fa551c6.jpg",
+                "http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/0dd22762268b477892343833ea88190a.jpg",
+                "http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/ffdaa183f35945d4b9180481566280b7.jpg",
+                "http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/4a9c9bafe5b14f57a1ab3a0f87648605.jpg"
+            ],
+            rules: {
+                "desc": '2016-10-30至2016-12-31可兑换',
+                "store": "全国指定门店,机场店和加盟店除外",
+                "restrice": "不限",
+                "detailRules": "点击查看详细信息",
+                "fetchinfo":'',
+                "refund":''
+            },
+            "proDetail": "<p><img alt=\"01.jpg\" src=\"http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/ea77da889b9645d5ada43c4110bd078d.jpg\"><img alt=\"02.jpg\" src=\"http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/16adc6252bfe4130ac5b4698a8f4fc24.jpg\"><img alt=\"03.jpg\" src=\"http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/43929dd82be34ec48014d8afb1906369.jpg\"><img alt=\"04.jpg\" src=\"http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/5299373d987841e2ab3c9f7e9841293e.jpg\"><img alt=\"05.jpg\" src=\"http://welfare-eco.oss-cn-hangzhou.aliyuncs.com/goods/2016/11/03ff0375c3e146c7af6aa40505ff75ae.jpg\"><br></p>"
+        };
+
+        $(document).ready(function() {
+
+            initBanner();
+            initProduct(prodDetail);
+            initRules();
+            $(".prod-detailhtml").html(prodDetail.proDetail);
+            $("#buyNow").on("click",buyNow);
+        });
+
+        //购买按钮
+        function buyNow() {
+            if($(this).hasClass(".button-disable")){
+                return;
+            }
+            location.href = "MJorder_detail.html";
+        }
+
+        //兑换
+        function initProduct(prodData){
+            console.log(prodData.prodName);
+            var dom = "<div class='prodName'>"+prodData.prodName+"</div><div class='prod-item'><div class='prod-extra'>"+prodData.prodPrice+"</div><div class='prod-tlt'>"+"兑换价格"+"</div></div>";
+            $(".prod-product").append($(dom));
+        }
+
+        function initRules() {
+            for (var i in prodDetail.rules){
+                if (prodDetail.rules[i] && prodDetail.rules[i] != ""){
+                    $("." + i).html(prodDetail.rules[i]);
+                }
+            }
+        }
+
+        function initBanner() {
+            if(!prodDetail || !prodDetail.imglist || typeof (prodDetail.imglist) == "undefined") {
+                return;
+            }
+            var imglist = prodDetail.imglist;
+            var dom = '<div class="swiper-container"><div class="swiper-wrapper">';
+            jQuery.each(imglist, function (index,val) {
+                dom += '<div class="swiper-slide"><img src="'+val+'"></div>';
+            });
+            dom += '</div><div class="swiper-pagination"></div></div>';
+            $(".prod-banner").append(dom);
+            var swiper = new Swiper('.swiper-container',{
+                        autoplay:0,
+                        loop:true,
+                        speed:500,
+                        pagination:'.swiper-pagination',
+                        autoHeight:true
+                    });
+        }
+
+    </script>
+
+</head>
+<body>
+<div class="prod-main">
+    <div class="pagecontent">
+        <div class="prod-banner"></div>
+        <div class="prod-product"></div>
+        <div class="prod-rules">
+            <div class="prod">
+                <div class="tlt">兑换须知</div>
+            </div>
+            <div class="prod-list" id="desc">
+                <div class="tlt">有效期</div>
+                <div class="extra desc"></div>
+            </div>
+            <a class="prod-list" id="store" >
+                <div class="tlt">支持门店</div>
+                <div class="extra store" ></div>
+                <div class="list-arrow">
+                    <i class="icon icon-arrow-right"></i>
+                </div>
+            </a>
+            <div class="prod-list" id="restrice" >
+                <div class="tlt">购买限制</div>
+                <div class="extra restrice" ></div>
+
+            </div>
+            <a class="prod-list" id="detailRules" >
+                <div class="tlt">详细规则</div>
+                <div class="extra detailRules"></div>
+                <div class="list-arrow">
+                    <i class="icon icon-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+        <div class="prod-detail">
+            <div class="title">
+                <div class="text">图文详情</div>
+            </div>
+            <div class="prod-detailhtml"></div>
+        </div>
+    </div>
+    <div class="button-box button-fixed">
+        <div class="button-normal" id="buyNow">立即兑换</div>
+    </div>
+</div>
+
+</body>
+</html>

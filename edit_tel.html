@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>修改手机号</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    var countdown = 60;
+    $(document).ready(function() {
+        var bgk = new Bgk();
+        $("#getCode").click(getCode);
+        $("input").keyup(function(event) {
+            if ($("#code").val() != "" && $("#tel").val() != "") {
+                $("body .btn").removeClass('disable');
+                $("body .btn").bind('click', function() {
+                    bgk.tit = '修改成功';
+                    bgk.initBgk();
+                    setTimeout(function() {
+                        location.href = 'account_detail.html';
+                    },300)
+                });
+            } else {
+                $("body .btn").unbind('click');
+                $("body .btn").addClass('disable');
+            }
+        });
+    });
+    var Bgk = function() {
+        this.tit       = '';
+        this.initBgk   = function(tit) {
+        var dom        = $("<div class='bgk'><div class='tit'>"+this.tit+"</div></div>");
+        $("body").append(dom);
+        $(".bgk .tit").css("margin-top", ($(".bgk").height() - $(".bgk .tit").height()) / 2);
+        $(".bgk .tit").css("margin-left", ($(".bgk").width() - $(".bgk .tit").outerWidth()) / 2);
+        }
+        this.removeBgk = function(){
+        $(".bgk").remove();
+    }
+    }
+
+    function getCode() {
+        if ($(this).hasClass("disable")) {
+            return;
+        }
+        $(this).html("发送校验码");
+        if (countdown == 0) {
+            $("#getCode").removeClass("disable");
+            $("#getCode").html("发送校验码");
+            countdown = 60;
+            return;
+        } else {
+            $("#getCode").addClass('disable');
+            countdown--;
+            $("#getCode").html(countdown + "秒后获取");
+        }
+        setTimeout(function() {
+            getCode()
+        }, 1000)
+    }
+    </script>
+</head>
+
+<body>
+    <div class="prod-info form" style="margin-top: 15px;">
+        <div class="line2"></div>
+        <div class="prod-tit prod-item">
+            <div class="tit">新手机号</div>
+            <div class="input">
+                <input type="text" placeholder="请输入手机号" id="tel" />
+            </div>
+        </div>
+        <div class="line1"></div>
+        <div class="prod-time prod-item">
+            <div class="tit">校验码</div>
+            <div class="input">
+                <input type="text" placeholder="请输入校验码" id="code" />
+            </div>
+            <div class="send-code" id="getCode">发送校验码</div>
+        </div>
+        <div class="line2"></div>
+    </div>
+    <div class="btncontent">
+        <div class="btn disable">完成</div>
+    </div>
+</body>
+
+</html>

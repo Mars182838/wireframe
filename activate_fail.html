@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>福利暂停提醒</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="css/activate_fail.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var stauts = true;
+            if(stauts){
+                $("img").attr("src","images/fail.gif");
+                $(".viewBtn").html("查看我的福利账户");
+                $(".viewBtn").click(function() {
+                    location.href = "index.html";
+                });
+
+            }else{
+                $("img").attr("src","images/beybey.gif");
+                $(".viewBtn").html("我知道了");
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="contain">
+    <div class="contain-box">
+        <div class="header"><img id="head" src="images/beybey.gif" ></div>
+        <div class="content">
+            <div class="tlt">您有1家福利企业已暂停您的福利</div>
+            <div class="company">外企德科股份有限公司</div>
+            <div class="tips">您将不能在使用该企业的福利积分</div>
+        </div>
+
+        <div class="viewBtn">我知道了</div>
+    </div>
+</div>
+</body>
+</html>

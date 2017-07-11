@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结果详情</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    
+    <style type="text/css">
+        *{margin: 0; padding: 0; }
+        body { width: 100%; font-family: 'PingFangSC-Regular'; line-height: 1; background: #f5f5f9; }
+
+        /*结果头部*/
+        .result_header {width: 100%;}
+        .result_header_content {width: 100%; background: #fff; position: relative; margin: 0 auto; text-align: center; padding-top: 50px;}
+        .card-icon { margin: 0 auto; width: 90px; height: 90px; background: url(images/icon-recharge.png) no-repeat; background-size: 100%;}
+        .card-icon.success {background-position: 0 100%;}
+        .recharge-tips {font-size: 21px; padding-top: 28px; color: #000;}
+        .recharge-navtips {font-size: 14px; color: #888; padding-top: 14px; padding-bottom: 23px;}
+        .line1 {position: absolute; left: 0; right: 0; border-top: 1px solid #ddd; }
+        .line2 {position: absolute; left: 15px; right: 0; border-top: 1px solid #ddd; }
+
+        /*商品内容CSS*/
+        .result_detail { position: relative; background: #fff; width: 100%; margin-top: 20px;}
+        .prod-info {width: 100%; padding: 15px; clear: both; overflow: hidden; }
+        .prod-name {float: left; font-size: 15px;}
+        .prod-detail {padding-left: 90px; font-size: 15px; color: #666 !important;}
+
+        .btn {margin: 25px 15px; border-radius: 5px; color: #fff; background: #108ee9; height: 45px; line-height: 45px; text-align: center;}
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $(".btn").click(function() {
+                window.location = "ykcoupon_detail.html";
+            });
+        });
+
+    </script>
+    
+</head>
+<body>
+    <div class="result_header">
+        <div class="result_header_content">
+            <div class="card-icon success"></div>
+            <p class="recharge-tips">兑换成功</p>
+            <p class="recharge-navtips">使用时请至【我的兑换券】中寻找</p>
+        </div>
+        <div class="line1"></div>
+    </div>
+
+    <div class="result_detail">
+        <div class="line1"></div>
+        <div class="prod-info">
+            <div class="prod-name">商品名称</div>
+            <div class="prod-detail">优酷 黄金会员卡 (1个月) </div>
+        </div>
+        <div class="line2"></div>
+        <div class="prod-info">
+            <div class="prod-name">数量</div>
+            <div class="prod-detail">1 </div>
+        </div>
+        <div class="line2"></div>
+        <div class="prod-info">
+            <div class="prod-name">有效期</div>
+            <div class="prod-detail">请于兑换成功后60日内使用</div>
+        </div>
+        <div class="line1"></div>
+    </div>
+
+    <div class="btn">查看我的兑换券</div>
+</body>
+</html>

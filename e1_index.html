@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/e1_index.css">
+    <script>
+    $(document).ready(function() {
+        initFooter("福利账户");
+        initUser();
+        initAccount();
+        initWelfare();
+        initProd();
+        initDeadline();
+
+
+
+    });
+    function initUser(userinfo){
+        userinfo     = {img:"images/info.jpg",name:"王小明",id:"3**************0"};
+        var userinfo = '<a class="userinfo" href="account_detail.html"><div class="list-thumb"><img src="'+userinfo.img+'"></div> <div class="list-content"><div class="list-title">'+userinfo.name+'</div><div class="titleicon"></div><div class="list-brief">'+userinfo.id+'</div></div><div class="list-arrow icon-form-arrow"></div></a>';
+        var wireitem = '<a class="wireitem columns two" href="weifare_detail.html"><div class="wireicon"><div class="img"></div></div><div class="wireitem-content"><div class="wireitem-tit">福利金</div><div class="wireitm-num">30,000.00</div></div></a>';
+        wireitem     += '<a class="wireitem columns two" href="coupon_my.html"><div class="wireicon"><div class="img"></div></div><div class="wireitem-content"><div class="wireitem-tit">兑换券</div><div class="wireitm-num">30,000</div></div></a>';
+        var wirelist = '<div class="wirelist row">'+ wireitem + '</div>';
+        var dom      = userinfo + wirelist;
+        $(".header").append($(dom));
+    }
+    function initAccount(data){
+        data = {"time":"下午 2:55","num":"+30,000.00","tit":"7月高温补贴","company":"易百信息技术(上海)股份有限公司"}
+        var card = '<div class="card card-account"><div class="card-icon"></div><div class="card-title">福利金到账提醒</div><div class="card-time">'+data.time+'</div><div class="account-num">'+data.num+'</div><div class="account-tit">'+data.tit+'</div><div class="account-company">'+data.company+'</div></div>';
+        $("#footer").before($(card));
+    }
+    function initWelfare(data){
+        data = {"title":"中秋礼遇-星巴克星悦月饼礼盒星巴克星悦月饼礼盒","time":"下午 2:55","imgUrl":"images/imgbig.png","text":"油炸大虾油炸大虾油炸大虾油油炸大虾油炸大虾油炸大虾油油炸大虾油炸大虾油炸大虾油油炸大虾油炸大虾油油炸大虾油炸大虾油炸大虾油","link":"prod_detail.html"};
+        var welfare = '<a class="card card-welfare" href="'+data.link+'"><div class="card-icon"></div><div class="card-title">'+data.title+'</div><div class="card-time">'+data.time+'</div><div class="img"><img src="'+data.imgUrl+'" ></div><div class="text">'+data.text+'</div><div class="card-line"></div><div class="card-link one">立即查看</div><div class="clear"></div></a>';
+        $("#footer").before($(welfare));
+    }
+    function initProd(data){
+        data = {"time":"下午 2:55","imgUrl":"images/img.png","title":"汉堡王天椒皇堡套餐椒皇堡套餐套餐套餐","price":"3,000 福利金","link":"prod_detail.html"};
+        var prod = '<a class="card card-deadline card-prod" href="'+data.link+'"><div class="card-icon"></div><div class="card-title">精选商品推荐</div><div class="card-time">'+data.time+'</div><div class="img"><img src="'+data.imgUrl+'"></div><div class="prod-title">'+data.title+'</div><div class="prod-quat">套餐一份</div><div class="prod-price">'+data.price+'</div><div class="card-line"></div><div class="card-link one">立即兑换</div><div class="clear"></div></a>';
+        $("#footer").before($(prod));
+    }
+    function initDeadline(data){
+        var data = {"time":"下午 2:55","imgUrl":"images/img.png","title":"汉堡王天椒皇堡套餐","deadtime":"2016-12-31","onlytime":"还剩5天","link":"coupon_detail.html"};
+        var deadline ='<div class="card card-deadline"><div class="card-icon"></div><div class="card-title">兑换券到期提醒</div><div class="card-time">下午 2:55</div><div class="img"><img src="images/img.png"></div><div class="deadline-content"><div class="prod-title">汉堡王天椒皇堡套餐</div><div class="prod-deadline">过期时间:2016-12-31</div></div><div class="line"></div><div class="prod-deadline prod-time"><i>还剩</i><span>5<b>天</b></span></div><div class="card-line"></div><a class="card-link" href="coupon_detail.html">立即使用</a><div class="clear"></div></div>';
+        $("#footer").before($(deadline));
+    }
+    </script>
+</head>
+
+<body style="background: #edeef0">
+<div class="pagecontent">
+    <div class="header"></div>
+    <div class="footer row" id="footer"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>福利账户</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+    <script>
+    $(document).ready(function() {
+        initAccoumt();
+        $(".btn").click(function(){ alert("ddd");
+
+    });
+    });
+
+
+    var countdown = 60;
+    function checktel(){
+        if($("#tel").length>1){
+            var s = $("#tel").val().replace(/[^0-9]*/g,"").substr(0,11);
+            $("#tel").val(s);
+        }
+        checkBtn();
+    }
+    function checkBtn(){
+        if($("#tel").length>1){
+            if($("#tel").val().length == 11 && $("#code").val() !=""){
+                $(".btncontent .btn").removeClass('disable');
+            }
+        }else{
+            if($("#code").val() !=""){
+                $(".btncontent .btn").removeClass('disable');
+            }
+        }
+    }
+    function getCode() {
+        if($(this).hasClass("disable")){
+            return;
+        }
+        $(this).html("发送校验码");
+        if (countdown == 0) {
+            $("#getCode").removeClass("disable");
+            $("#getCode").html("发送校验码");
+            countdown = 60;
+            return;
+        } else {
+            $("#getCode").addClass('disable');
+            countdown--;
+            $("#getCode").html(countdown+"秒后获取");
+        }
+        setTimeout(function() {
+            getCode()
+        }, 1000)
+    }
+
+    function initAccoumt() {
+        var hadphone = false;
+        var hadCompany = true;
+        var phone = '';
+        var company = '';
+        if (hadphone) {
+            phone = '<div class="text">13312341234</div>';
+        } else {
+            phone = '<div class="input"><input type="text" placeholder="请输入手机号" id="tel"/></div>';
+        }
+        if (hadCompany) {
+            company = '<div class="line1"></div><div class="prod-item"><div class="tit">福利企业</div><div class="text gary">易百信息技术(上海)股份有限公司</div></div><div class="line2"></div>';
+        } else {
+            company = '<div class="line2"></div>';
+        }
+        var prodinfo = '<div class="prod-info form"><div class="prod-item"><div class="tit">手机号</div>' + phone + '</div><div class="line1"></div><div class="prod-item"><div class="tit">校验码</div><div class="input"><input type="text" placeholder="请输入校验码" id="code"/></div><div class="send-code" id="getCode">发送校验码</div></div><div class="line2"></div><div class="tips">个人信息</div><div class="line2"></div><div class="prod-item"><div class="tit">真实姓名</div><div class="text gary">*小明</div></div><div class="line1"></div><div class="prod-item"><div class="tit">身份证号</div><div class="text gary">3*************0</div></div>' + company + '</div>';
+        $(".account-tel").append($(prodinfo));
+        $("#getCode").click(getCode);
+    }
+    </script>
+</head>
+
+<body>
+    <div class="banner">
+        <img src="images/account-banner.jpg" alt="">
+    </div>
+    <div class="account-tel">
+    </div>
+    <div class="btncontent">
+        <div class="btn disable">完成激活</div>
+    </div>
+</body>
+
+</html>

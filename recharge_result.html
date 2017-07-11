@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>结果详情</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    .card-icon { margin: 0 auto; width: 90px; height: 90px; background: url(images/icon-recharge.png) no-repeat; background-size: 100%; }
+    .card-icon.success { background-position: 0 100%; }
+    .card-icon.error { background-position: 0 0; }
+    .recharge-tips.error { color: #000; }
+    .recharge-detail .text { color: #888 !important; }
+    .icon { font-size: 15px; position: absolute; right: 15px; padding-left: 5px; color: #888; }
+    </style>
+    <script>
+    $(document).ready(function() {
+        initDetail();
+
+    });
+
+    function initDetail() {
+        var ifSucc = true;
+        var cardData = {};
+        var detail = ''
+        if (ifSucc) {
+            cardData = {
+                tips: "兑换成功",
+                navtips: "使用时请至【我的兑换券】中寻找",
+                flag: "success",
+                btntxt: "查看我的兑换券",
+                link: "coupon_detail.html",
+            };
+            detail = '<div class="recharge-detail"><div class="prod-info"><div class="line2"></div><div class="prod-tit prod-item"><div class="tit">商品名称</div><div class="text">星巴克中杯饮料</div></div><div class="line1"></div><div class="prod-time prod-item"><div class="tit">有效期至</div><div class="text">2016-12-31</div></div><div class="line1"></div><div class="prod-city prod-item"><div class="icon icon-form-arrow"></div><div class="tit">支持门店</div><div class="text nowrap">全国所有星巴克店铺均支持(除机场、火车站、高铁站内的星巴克之外)</div></div><div class="line2"></div></div></div>';
+        } else {
+            cardData = {
+                tips: "兑换失败",
+                navtips: "网络异常，请稍后再试",
+                flag: "error",
+                btntxt: "返回商品详情页",
+                link: "prod_detail.html",
+            };
+        }
+        var card = '<div class="card-recharge"><div class="card-icon ' + cardData.flag + '"></div><div class="recharge-tips '+cardData.flag+'">' + cardData.tips + '</div><div class="recharge-navtips">' + cardData.navtips + '</div><div class="line2"></div></div>';
+
+        var btn = ' <div class="btncontent"><a class="btn" href="'+cardData.link+'">'+cardData.btntxt+'</a></div>'
+        $("body").append($(card));
+        $('.card-recharge').after($(detail));
+        $("body").append($(btn));
+    }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+.headtips { line-height: 45px; box-sizing: border-box; width: 100%; height: 45px; padding: 0 15px; border-bottom: 1px solid #ddd; background: #fff; position: fixed; z-index:999;}
+.headtips .icon { font-size: 21px; line-height: 45px; float: left; padding-right: 5px; color: #fff; color: #ff533b; }
+.headtips .tips { font-size: 17px; }
+.icon { color: #ccc; }
+.topbar { font-size: 15px; }
+.topbaritem { position: relative; }
+.select { position: absolute; top: 50%; left: 50%; width: 10px; height: 12px; margin-top: -6px; margin-left: 20px; background: url(../images/select.png) no-repeat; background-size: 100% auto; background-position: 0 100%;}
+.select.tohight{background-position: 0 50%;}
+.select.tolow{background-position: 0 0;}
+.prod-list { width: 100%; position: relative; top: 90px; padding-bottom: 70px;}
+.prod-item { position: relative; width: 100%; height: 100px; margin-bottom: 8px; background: #fff; display: block;}
+.prod-item .img { width: 80px; height: 80px; padding: 10px 15px; }
+.prod-item .img img { width: 100%; }
+.prod-item .itemcontent { position: absolute; top: 0; right: 0; left: 110px; }
+.itemcontent .tagBox { position: absolute; top: 14px; height: 15px; }
+.itemcontent .tagBox .tag { float: left; height: 15px; margin-right: 6px; }
+.tagBox .tag img { height: 100%; }
+.itemcontent .pro-tit { font-size: 15px; line-height: 18px; position: absolute; top: 35px; color: #3f3f3f; }
+.pro-price { font-size: 17px; position: absolute; top: 72px; color: #f96268; }
+.pro-price i { font-size: 12px; font-style: normal; padding-left: 5px; }
+.brandbox { position: fixed; top: 90px; right: 0; bottom: 0; left: 0; opacity: 0; background: rgba(0, 0, 0, .6); }
+.brandbox ul { box-sizing: border-box; width: 100%; height: 355px; padding-top: 25px 15px 0; background: #fff; }
+.brandbox ul li { float: left; width: 33.33%; margin-bottom: 25px; list-style: none; }
+.brandbox li .tit { font-size: 13px; padding-top: 5px; text-align: center; color: #888; }
+.brandbox li .logobrand { display: block; width: 60px; height: 60px; margin: 0 auto; background: #fff url(../images/brandLogo.png); background-size: 100% auto; }
